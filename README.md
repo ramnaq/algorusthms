@@ -11,4 +11,4 @@ and reenforce knowledge about algorithms.
 
 - [Dynammic connectivity](./src/dynammic_connectivity)
   - [Quick find](./src/dynammic_connectivity/quick_find.rs)
-  - [Quick union](./src/dynammic_connectivity/quick_union.rs) (not implemented yet)
+  - [Quick union](./src/dynammic_connectivity/quick_union.rs)
