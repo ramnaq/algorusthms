@@ -21,11 +21,11 @@ use crate::dynammic_connectivity::UnionFind;
  *      10^18 / 10 = 10^17  (Same problem, 10x faster computer)
  *      10 * 10^17 = 10^18  (10x that problem, with the new computer)
  */
-struct QuickFind<T> {
-    pub vec: Vec<T>,
+struct QuickFind {
+    pub vec: Vec<i32>,
 }
 
-impl UnionFind for QuickFind::<i32> {
+impl UnionFind for QuickFind {
     fn union(&mut self, p: i32, q: i32) {
         let p_id = self.vec[p as usize];
         let q_id = self.vec[q as usize];
@@ -42,14 +42,15 @@ impl UnionFind for QuickFind::<i32> {
         });
     }
 
-    fn connected(self, p: i32, q: i32) -> bool {
+    fn connected(&self, p: i32, q: i32) -> bool {
         return self.vec[p as usize] == self.vec[q as usize];
     }
 }
 
 
-fn quick_find() {
-    let mut quick_find = QuickFind::<i32> {
+pub fn test() {
+    println!("### Test QuickFind ###");
+    let mut quick_find = QuickFind {
         vec: (0..10).collect::<Vec<i32>>()
     };
 
@@ -69,7 +70,3 @@ fn quick_find() {
     assert_eq!(vec![1,1,1,8,8,1,1,1,8,8], quick_find.vec);
 }
 
-
-fn main() {
-    quick_find();
-}
