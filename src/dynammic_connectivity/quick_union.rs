@@ -11,12 +11,11 @@ struct QuickUnion {
 
 impl QuickUnion {
     fn root(&self, x: i32) -> i32 {
-        let x_parent = self.vec[x as usize];
-        if x != x_parent {
-            self.root(x_parent)
-        } else {
-            x
+        let mut x = x;
+        while x != self.vec[x as usize] {
+            x = self.vec[x as usize];
         }
+        x
     }
 }
 
