@@ -1,5 +1,6 @@
 use crate::dynammic_connectivity::UnionFind;
 
+
 /**
  * Quick find algorithm (eager approach): numbers p, q are in the same connected
  * component if the positions [p] and [q] in the array have the same identifier
